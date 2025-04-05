@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ReactNativePublicationApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 

@@ -38,6 +38,7 @@ public class UserController {
 
         return ResponseEntity.badRequest().body(result);
     }
+
     @GetMapping("/public/user/login/{email}/{password}")
     public ResponseEntity<ResultService<UserLoginDTO>> login(@PathVariable String email, @PathVariable String password){
         var result = userAuthenticationService.Login(email, password);

@@ -3,6 +3,7 @@ package com.backend.react_native_publication.application.dto.validations.userVal
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 import java.util.UUID;
@@ -12,9 +13,11 @@ public class UserCreateValidatorDTO {
     @JsonProperty("id")
     private UUID Id;
     @NotEmpty(message = "name should not be empty")
+    @Size(min = 3, message = "password should have at last 3 characters")
     @JsonProperty("name")
     private String Name;
     @NotEmpty(message = "email should not be empty")
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@gmail\\.com$", message = "email must be a valid Gmail address")
     @JsonProperty("email")
     private String Email;
     @NotEmpty(message = "password should not be empty")
